@@ -59,7 +59,7 @@ def preprossing(image):
 classes = ['Coriander','FreshApple','FreshBanana','FreshBittergourd','FreshCapsicum','FreshOrange','FreshTomato','Parsley',
            'StaleApple','StaleBanana','StaleBittergourd','StaleCapsicum','StaleOrange','StaleTomato']
 #classes=['StaleBanana','FreshTomato','FreshBanana','Parsley','Coriander','StaleTomato']
-model = tf.keras.models.load_model("reco.h5", custom_objects={'CustomBatchNormalization': CustomBatchNormalization})
+model = tf.keras.models.load_model("recoo.h5", custom_objects={'CustomBatchNormalization': CustomBatchNormalization})
 @app.route('/')
 def index():
 
