@@ -61,7 +61,9 @@ classes = ['Coriander','FreshApple','FreshBanana','FreshBittergourd','FreshCapsi
 #classes=['StaleBanana','FreshTomato','FreshBanana','Parsley','Coriander','StaleTomato']
 url = 'https://ln5.sync.com/dl/3f0ac7910/yyuefaud-pskdtvnn-kmr5zq6s-c364wpvn'
 response = requests.get(url)
-model = tf.keras.models.load_model(response.content, custom_objects={'CustomBatchNormalization': CustomBatchNormalization})
+with open('recoo.h5', 'wb') as f:
+    f.write(response.content)
+model = tf.keras.models.load_model('recoo.h5', custom_objects={'CustomBatchNormalization': CustomBatchNormalization})
 @app.route('/')
 def index():
 
